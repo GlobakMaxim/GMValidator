@@ -1,9 +1,5 @@
 //
 //  GMValidator.m
-//  RenaultKapturFlashmob
-//
-//  Created by Jone Doe on 31/05/16.
-//  Copyright © 2016 itellaConnexions. All rights reserved.
 //
 
 #import "GMValidator.h"

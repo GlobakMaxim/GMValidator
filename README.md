@@ -12,7 +12,7 @@
 ##### Пример с телефонным номером
 ```
 NSString *phoneNumber = @"+7 (925) 123-45-67";
-[GMValidator validatePhoneNumber:phoneNumber]; // true
+[GMValidator validatePhoneNumber:phoneNumber]; // YES
 [GMValidator formatNumber:phoneNumber]; // 79251234567
 ```
 
@@ -22,8 +22,8 @@ NSString *phoneNumber = @"+7 (925) 123-45-67";
 ```
 + (BOOL)validateEmail:(NSString *)email;
 + (BOOL)validatePhoneNumber:(NSString *)phone;
-+ (BOOL)validateName:(NSString *)name;
++ (BOOL)validateRussianName:(NSString *)name;
++ (BOOL)validateMigrantName:(NSString *)name;
 + (BOOL)validateLogin:(NSString *)login;
-+ (NSString
 + (NSString*)formatNumber:(NSString*)mobileNumber;
 ```

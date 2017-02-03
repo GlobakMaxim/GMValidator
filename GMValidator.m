@@ -8,7 +8,7 @@
 
 + (BOOL)validateEmail:(NSString *)email{
     
-    NSString *emailRegex = @"^[-\\w.]+@([A-z0-9][-A-z0-9]+\\.)+[A-z]{2,4}$";
+    NSString *emailRegex = @"^(?i)[a-z0-9]+((\\.|-|_)?[a-z0-9]+)*@([a-z0-9]+\\.)+[a-z]{2,4}";
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     return [emailTest evaluateWithObject:email];
 }
@@ -20,7 +20,14 @@
     return [testPhone evaluateWithObject:phone];
 }
 
-+ (BOOL)validateName:(NSString *)name{
++ (BOOL)validateRussianName:(NSString *)name{
+    
+    NSString *nameRegex = @"[А-я\\s\\-]+$";
+    NSPredicate *testName = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", nameRegex];
+    return [testName evaluateWithObject:name];
+}
+
++ (BOOL)validateMigrantName:(NSString *)name{
     
     NSString *nameRegex = @"[A-zА-я\\s\\-]+$";
     NSPredicate *testName = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", nameRegex];
@@ -35,17 +42,9 @@
 }
 
 + (NSString*)formatNumber:(NSString*)mobileNumber{
-    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"(" withString:@""];
-    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@")" withString:@""];
-    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@" " withString:@""];
-    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"-" withString:@""];
-    mobileNumber = [mobileNumber stringByReplacingOccurrencesOfString:@"+" withString:@""];
-    
-    int length = (int)mobileNumber.length;
-    if(length > 10) {
-        mobileNumber = [mobileNumber substringToIndex: 9];
-    }
-    return mobileNumber;
+    NSCharacterSet *charSet = [[NSCharacterSet decimalDigitCharacterSet] invertedSet];
+    NSString *cleanedPhone = [[mobileNumber componentsSeparatedByCharactersInSet:charSet] componentsJoinedByString:@""];
+    return cleanedPhone;
 }
 
 @end

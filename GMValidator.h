@@ -8,7 +8,8 @@
 
 + (BOOL)validateEmail:(NSString *)email;
 + (BOOL)validatePhoneNumber:(NSString *)phone;
-+ (BOOL)validateName:(NSString *)name;
++ (BOOL)validateRussianName:(NSString *)name;
++ (BOOL)validateMigrantName:(NSString *)name;
 + (BOOL)validateLogin:(NSString *)login;
 + (NSString*)formatNumber:(NSString*)mobileNumber;
 

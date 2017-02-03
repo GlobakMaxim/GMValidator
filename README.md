@@ -5,6 +5,8 @@
 * Телефон
 * Имя
 * Login
+* Серия и номер паспорта
+* Номер водительких прав
 
 #### Как использовать? 
 
@@ -25,5 +27,9 @@ NSString *phoneNumber = @"+7 (925) 123-45-67";
 + (BOOL)validateRussianName:(NSString *)name;
 + (BOOL)validateMigrantName:(NSString *)name;
 + (BOOL)validateLogin:(NSString *)login;
+
++ (BOOL)validateRusPassportNumber:(NSString *)passportNumber;
++ (BOOL)validateRusDrLicenseNumber:(NSString *)drLicenseNumber; // Принимает русские буквы
+
 + (NSString*)formatNumber:(NSString*)mobileNumber;
 ```

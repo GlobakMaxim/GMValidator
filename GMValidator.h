@@ -11,7 +11,10 @@
 + (BOOL)validateRussianName:(NSString *)name;
 + (BOOL)validateMigrantName:(NSString *)name;
 + (BOOL)validateLogin:(NSString *)login;
+
++ (BOOL)validateRusPassportNumber:(NSString *)passportNumber;
++ (BOOL)validateRusDrLicenseNumber:(NSString *)drLicenseNumber;
+
 + (NSString*)formatNumber:(NSString*)mobileNumber;
 
 @end
-

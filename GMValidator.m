@@ -1,9 +1,5 @@
 //
 //  GMValidator.m
-//  RenaultKapturFlashmob
-//
-//  Created by Jone Doe on 31/05/16.
-//  Copyright © 2016 itellaConnexions. All rights reserved.
 //
 
 #import "GMValidator.h"
@@ -33,6 +29,16 @@
 + (BOOL)validateLogin:(NSString *)login{
     NSString *loginRegex = @"^[A-z0-9_-]{3,16}$";
     return [self validateString:login withMask:loginRegex];
+}
+
++ (BOOL)validateRusPassportNumber:(NSString *)passportNumber {
+    NSString *passportNumRegex = @"\\d{4} \\d{6}";
+    return [self validateString:passportNumber withMask:passportNumRegex];
+}
+
++ (BOOL)validateRusDrLicenseNumber:(NSString *)drLicenseNumber {
+    NSString *drLicenseNumberRegex = @"(?i)[0-9]{2}([0-9]|[авекмнорстух]){2} \\d{6}";
+    return [self validateString:drLicenseNumber withMask:drLicenseNumberRegex];
 }
 
 + (BOOL)validateString:(NSString *)str withMask:(NSString *)mask {

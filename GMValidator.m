@@ -37,7 +37,7 @@
 }
 
 + (BOOL)validateRusDrLicenseNumber:(NSString *)drLicenseNumber {
-    NSString *drLicenseNumberRegex = @"(?i)\\d{2}(\\d|[авекмнорстух]){2} \\d{6}";
+    NSString *drLicenseNumberRegex = @"(?i)\\d{2}(\\d{2}|[авекмнорстух]{2}) \\d{6}";
     return [self validateString:drLicenseNumber withMask:drLicenseNumberRegex];
 }
 

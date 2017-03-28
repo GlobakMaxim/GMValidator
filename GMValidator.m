@@ -17,12 +17,12 @@
 }
 
 + (BOOL)validateRussianName:(NSString *)name{
-    NSString *nameRegex = @"[А-я\\s\\-]+$";
+    NSString *nameRegex = @"[А-яЁё\\s\\-]+$";
     return [self validateString:name withMask:nameRegex];
 }
 
 + (BOOL)validateMigrantName:(NSString *)name{
-    NSString *nameRegex = @"[A-zА-я\\s\\-]+$";
+    NSString *nameRegex = @"[A-zА-яЁё\\s\\-]+$";
     return [self validateString:name withMask:nameRegex];
 }
 
